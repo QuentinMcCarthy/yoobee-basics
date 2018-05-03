@@ -5,15 +5,50 @@
 		<title>JS Objects</title>
 	</head>
 	<body>
-
 		<script type="text/javascript">
-			var myObj = {
-				aProperty: "first property",
-				bProperty: "second propterty",
-				cProperty: "cProperty"
+			function firstTask(){
+				var myObj = {
+					aProperty: "first property",
+					bProperty: "second propterty",
+					cProperty: "third property",
+					innerObjOne: {
+						dProperty: "first property",
+						eProperty: "second property",
+						fProperty: "third property"
+					},
+					innerObjTwo: {
+						gProperty: "first property",
+						hProperty: "second property",
+						iProperty: "third property",
+						a: 1,
+						b: 2,
+						c: 3,
+						dArray: [
+							"a",
+							"b",
+							"c",
+							{
+								arrayProp: ":D"
+							}
+						]
+					},
+					aMethod: function(a,b){
+						var sum = a+b;
+						console.log(sum);
+						alert(myObj.innerObjTwo.dArray[3].arrayProp)
+					}
+				};
+
+				console.log(myObj);
+
+				function triggerMethod(){
+					myObj.aMethod();
+				}
+
+				setTimeout(triggerMethod, 8000);
 			}
 
-			console.log(myObj);
+			firstTask();
 		</script>
 	</body>
 </html>
