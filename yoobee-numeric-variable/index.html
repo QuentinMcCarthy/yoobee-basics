@@ -3,9 +3,53 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Numeric Variable</title>
+
+		<style>
+			body {
+				background-color:black;
+			}
+
+			#newInfo {
+				text-align:center;
+				color:white;
+			}
+
+			#randInt {
+				font-size:3em;
+				position:relative;
+				top:50px;
+			}
+
+			.casinoGate {
+				background-color:red;
+				height:250px;
+				width:250px;
+				box-sizing:border-box;
+				padding:13.8px 0;
+			}
+
+			.casinoGate div {
+				background-color:transparent;
+				width:220px;
+				height:220px;
+				border:5px inset black;
+				margin:0 auto;
+				padding:0 0;
+			}
+		</style>
 	</head>
 	<body>
-		<h1 id="cost">If you see this; it's borked</h1>
+		<!-- <h1 id="oldCost">If you can see this; it's borked</h1> -->
+		<!-- <h1 id="newCost">If you can see this; it's borked</h1> -->
+
+		<!-- <div id="oldInfo">If you can see this; it's borked</div> -->
+		<div id="newInfo">If you can see this; it's borked</div>
+		<div id="gateLeft" class="casinoGate">
+			<div></div>
+		</div>
+		<div id="gateRight" class="casinoGate">
+			<div></div>
+		</div>
 
 		<script src="js/numeric-variable.js"></script>
 	</body>
