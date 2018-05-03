@@ -1,0 +1,25 @@
+/* Padding for document magin */
+body {padding:10px;}
+
+/* Margin for buttons to separate them from divs */
+#buttons {
+	margin-top:10px;
+}
+
+/* Emoji transform rotation to make them upright */
+.emoji {
+	display:inline-block;
+	transform:rotate(90deg);
+}
+
+/* Border and height values to make the divs more visible */
+.col {
+	border:1px solid black;
+	min-height:22.5em;
+}
+
+/* Colouration for divs to separate them */
+.red {background-color:red;}
+.orange {background-color:orange;}
+.yellow {background-color:yellow;}
+.green {background-color:green;}

@@ -1,0 +1,43 @@
+#mainContainer {
+	max-width:1200px;
+	margin:0 auto;
+	padding-top:100px;
+}
+
+.box {
+	border:1px solid black;
+	padding-left:10px;
+}
+
+#flexContainer {
+	display:flex;
+	/*align-items:flex-end;*/
+	/*align-items:flex-start;*/
+	align-items:center;
+	/*flex-direction:column;*/
+	flex-direction:row;
+}
+
+#flexContainer2 {
+	display:flex;
+	justify-content:space-between;
+}
+
+#flexContainer2 .box {
+	flex-basis:20%;
+}
+
+.box-1 {
+	flex:1;
+	order:3;
+}
+
+.box-2 {
+	flex:2;
+	order:1;
+}
+
+.box-3 {
+	flex:3;
+	order:2;
+}

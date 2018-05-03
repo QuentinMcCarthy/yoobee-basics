@@ -1,0 +1,37 @@
+.box {
+	width:200px;
+	height:200px;
+	display:inline-block;
+}
+
+.green {
+	background-color:#27ae60;
+}
+
+.red {
+	background-color:#e74c3c;
+}
+
+.blue {
+	background-color:#3498db;
+}
+
+.purple {
+	background-color:#8e44ad;
+}
+
+.orange {
+	background-color:#e67e22;
+}
+
+.wider {
+	width:400px;
+}
+
+.higher {
+	height:600px;
+}
+
+.listColor {
+	color:blue;
+}

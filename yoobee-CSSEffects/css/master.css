@@ -1,0 +1,142 @@
+.container {
+	max-width:1140px;
+	width:1140px;
+	margin:0 auto;
+}
+
+.row {
+	display:block;
+	min-height:200px;
+	margin-bottom:10px;
+}
+.row::after {
+	clear:both;
+	display:table;
+	content:"";
+}
+
+.box {
+	height:100px;
+	width:100px;
+	float:left;
+	margin-right:10px;
+}
+
+.red {
+	background-color:#e74c3c;
+}
+
+.green {
+	background-color:#16a085
+}
+
+.translate {
+	transform:translate(100px,100px);
+	-webkit-transform:translate(100px,100px); /* Safari */
+	-ms-transform:translate(100px,100px); /* IE9 */
+	-moz-transform:translate(100px,100px); /* Mozilla */
+	/* Specify different browser compatabilities for all transforms */
+}
+
+.rotate {
+	transform:rotate(45deg);
+}
+
+.scale {
+	transform:scale(0.5);
+}
+
+.skewX {
+	transform:skewX(20deg);
+}
+.skewY {
+	transform:skewY(20deg);
+}
+
+.matrix {
+	/* matrix(scaleX, skewY, skewX, scaleY, translateX, translateY) */
+	transform:matrix(0.75,0.25,0.2,1,150,50);
+}
+
+.transition {
+	/* transition:width 2s, background-color 2s, height 2s; */
+	/* -webkit-transition:width 2s, background-color 2s, height 2s; */
+	/* -ms-transition:width 2s, background-color 2s, height 2s; */
+	/* -moz-transition:width 2s, background-color 2s, height 2s; */
+	/* transition-delay:2s; */
+	/* transition-timing-function:ease-in; */
+	transition:2s all ease-in;
+}
+.transition:hover {
+	width:300px;
+	background-color:blue;
+	/* height:2px; */
+	transform:rotate(1080deg);
+	/* transform:matrix(0.75,0.25,0.2,1,150,50); */
+}
+
+#rotateBox {
+	transition:2s all ease-in;
+	-webkit-transition:2s all ease-in;
+	-ms-transition:2s all ease-in;
+	-moz-transition:2s all ease-in;
+}
+
+.rotate360 {
+	transform:rotate(360deg);
+}
+
+#flexContainer {
+	display:flex;
+}
+
+.flexColumn {
+	flex:1;
+	height:200px;
+	border:1px solid black;
+	transition:0.5s all linear;
+}
+
+.grow {
+	flex:2;
+}
+
+/* HAMBURGER X START */
+
+#hamburger {
+	width:100px;
+	height:100px;
+	margin:50px auto;
+	cursor:pointer;
+}
+
+#hamburger div {
+	width:100px;
+	height:20px;
+	background-color:lightblue;
+	transition:0.25s all linear;
+}
+
+#topBun {
+	margin-bottom:10px;
+}
+
+#ham {}
+
+#bottomBun {
+	margin-top:10px;
+}
+
+.makeXTop {
+	transform: translate(0,30px) rotate(45deg);
+}
+
+.hide {
+	opacity:0;
+}
+
+.makeXBottom {
+	transform: translate(0,-30px) rotate(-45deg);
+}
+
+/* HAMBURGER X END */

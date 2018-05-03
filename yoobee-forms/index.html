@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Form Elements</title>
+		<!-- <style media="screen">
+			main {
+				width:1140px;
+				margin:0 auto;
+			}
+
+			.formElement {
+				width:100%;
+				height:50px;
+				border:1px solid black;
+				font-size:2em;
+			}
+		</style> -->
+	</head>
+	<body>
+		<main>
+			<h1>Form Elements</h1>
+
+			<form action="success.html" method="post" enctype="multipart/form-data">
+				<label for="firstName">First Name</label>
+				<input type="text" name="firstName" class="formElement" placeholder="Please enter some text" value="Pre-added value" autofocus disabled required>
+				<br>
+				<label for="number">Number</label>
+				<input type="Number" name="number" min="0" max="10" step="0.5">
+				<br>
+				<label for="password">Password</label>
+				<input type="password" name="Password">
+				<br>
+				<label for="file">File</label>
+				<input type="file" name="File">
+				<br>
+				<label for="reset">Reset</label>
+				<input type="reset" name="reset" value="Reset the form">
+				<br>
+				<label for="gender">Radio</label>
+				<br>
+				<input type="radio" name="gender"><label>Male</label>
+				<br>
+				<input type="radio" name="gender"><label>Female</label>
+				<br>
+				<input type="radio" name="gender" checked><label>Other</label>
+				<br>
+				<label for="Fruit[]">Checkbox</label>
+				<input type="checkbox" name="Fruit[]" value="Apples"><label for="">Apples</label>
+				<input type="checkbox" name="Fruit[]" value="Bananas"><label for="">Bananas</label>
+				<input type="checkbox" name="Fruit[]" value="Pears"><label for="">Pears</label>
+				<br>
+				<label for="textarea">Large section of text</label>
+				<textarea name="textarea" rows="10" cols="80" required placeholder="Test"></textarea>
+				<br>
+				<label for="options">Select Options</label>
+				<select name="options">
+					<option value="0">Please Choose an Option</option>
+					<option value="1">Option 1</option>
+					<option value="2">Option 2</option>
+					<option value="3">Option 3</option>
+				</select>
+				<br>
+				<br>
+
+				<p>These inputs arent fully supported across all browsers</p>
+				<label for="colorPicker">Color</label>
+				<input type="color" name="colorPicker">
+				<br>
+				<label for="datePicker">Date</label>
+				<input type="date" name="datePicker">
+				<input type="datetime-local" name="dateLocal">
+				<input type="month" name="dateMonth">
+				<input type="time" name="dateTime">
+				<input type="week" name="dateWeek">
+				<br>
+				<label for="url">URL</label>
+				<input type="url" name="URL">
+				<br>
+				<label for="range">Range</label>
+				<input type="range" name="range" min="0" max="100">
+				<br>
+				<br>
+
+				<p>Phone elements</p>
+				<label for="phone">Phone</label>
+				<input type="tel" name="Phone">
+				<br>
+				<label for="email">Email</label>
+				<input type="email" name="Email">
+				<br>
+
+
+
+				<br>
+				<button type="submit" name="button">Button</button>
+				<input type="submit" value="Submit Form" multiple>
+			</form>
+		</main>
+	</body>
+</html>
