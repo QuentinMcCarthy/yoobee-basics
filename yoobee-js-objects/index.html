@@ -5,6 +5,18 @@
 		<title>JS Objects</title>
 	</head>
 	<body>
+		<ul id="list" class="list">
+			<li class="listItem">Q</li>
+			<li class="listItem">U</li>
+			<li class="listItem">E</li>
+			<li class="listItem">N</li>
+			<li class="listItem">T</li>
+			<li class="listItem">I</li>
+			<li class="listItem">N</li>
+		</ul>
+
+		<!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 		<script type="text/javascript">
 			function firstTask(){
 				var myObj = {
@@ -48,7 +60,19 @@
 				setTimeout(triggerMethod, 8000);
 			}
 
-			firstTask();
+			function secondTask(){
+				var getList = document.getElementsByClassName("listItem");
+				// var catQuery = document.querySelector(".listItem");
+
+				console.dir(getList[3].innerText);
+
+				var $getList = $(".listItem");
+
+				console.dir($getList);
+			}
+
+			// firstTask();
+			secondTask();
 		</script>
 	</body>
 </html>
