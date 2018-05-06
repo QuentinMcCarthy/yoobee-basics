@@ -1,0 +1,55 @@
+body {
+	background-color:black;
+}
+
+#newInfo {
+	text-align:center;
+	color:white;
+	position:fixed;
+	top:100px;
+	left:400px;
+}
+
+#randInt {
+	font-size:4em;
+	position:relative;
+	top:50px;
+}
+
+.casinoGate {
+	background-color:red;
+	height:250px;
+	width:250px;
+	box-sizing:border-box;
+	padding:13.8px 0;
+	transition:all 2.5s ease-in-out;
+}
+
+.casinoGate div {
+	background-color:transparent;
+	width:220px;
+	height:220px;
+	border:5px inset black;
+	margin:0 auto;
+	padding:0 0;
+}
+
+#gateLeft {
+	position:fixed;
+	top:175px;
+	left:275px;
+}
+
+#gateRight {
+	position:fixed;
+	top:175px;
+	left:525px;
+}
+
+.gateLeft-open {
+	left:200px !important;
+}
+
+.gateRight-open {
+	left:600px !important;
+}
