@@ -22,11 +22,15 @@
 // Present a combination of the array data at the final step. (edited)
 
 $(document).ready(function(){
+	// Ready an array for the answers
 	var answers = [];
 
+	// Function called to add answers to the above array
 	function addAnswerToArray(answer,correct){
+		// Temporary variable for the returned string
 		var validate;
 
+		// If the given answer equals the given correct value
 		if(answer == correct){
 			validate = "Correct";
 		}
@@ -34,29 +38,41 @@ $(document).ready(function(){
 			validate = "Incorrect";
 		}
 
+		// Push the answer and whether it is correct or not to the array
 		answers.push(answer+" - "+validate);
 	}
 
+	// When the button is pushed
 	$("#checkAnswer").click(function(){
+		// Get the value of the input, in lowercase to avoid errors with capitalisation.
 		var getValue = $("#question1Input").val().toLowerCase();
 
+		// Add the answer to the array, correct answer given.
 		addAnswerToArray(getValue,"wellington");
 
+		// Get the value that is returned from the window prompt, lowercase to avoid errors.
 		getValue = window.prompt("What is the largest city in New Zealand?").toLowerCase();
 
+		// Add the answer to the array, correct answer given.
 		addAnswerToArray(getValue,"auckland");
 
+		// Get the value that is returned from the window prompt, lowercase to avoid errors.
 		getValue = window.prompt("What function is being used to do this?");
 
+		// Add the answer to the array, correct answer given.
 		addAnswerToArray(getValue,"window.prompt");
 
+		// Temporary variables for the increment and a string
 		var i;
 		var dataString = "";
 
+		// Loop through every item in the array
 		for(i=0; i<answers.length; i++){
+			// Add the string from the array to the dataString var, br to split lines
 			dataString += answers[i] + "<br>";
 		}
 
+		// Put the string HTML into the HTML of the validateAnswer element
 		$("#validateAnswer").html(dataString);
 	});
 });
