@@ -50,7 +50,7 @@ $(document).ready(function(){
 		var b1 = randInt(0,15);
 		var b2 = randInt(0,15);
 
-		// Initialise hex srting with #
+		// Initialise hex string with #
 		var hexString = "#";
 
 		// Call the checkColorVal function to set the proper value, then add it to the hex string
