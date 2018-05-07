@@ -3,3 +3,4 @@ config.codekit3
 prepros-6.config
 jquery*.js
 node_modules/
+jQuery_plugins/
