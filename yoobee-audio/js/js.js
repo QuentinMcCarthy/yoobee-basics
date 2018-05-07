@@ -40,4 +40,9 @@ $(document).ready(function(){
 		"angleArc":180,
 		"displayPrevious":true
 	});
+
+	$("#audioProg").knob({
+		"angleOffset":90,
+		"angleArc":180
+	})
 });
