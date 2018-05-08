@@ -4,11 +4,21 @@
 	left:50px;
 }
 
-#audioProgDiv {
+#audioProgDiv, #audioProgStyleDiv {
 	position:fixed;
 	top:100px;
 	left:100px;
 }
+
+/* #audioProgLabelDiv {
+	position:fixed;
+	top:160px;
+	left:169px;
+}
+
+#audioProgLabel {
+	font-size:1.5em;
+} */
 
 #controls {
 	position:fixed;

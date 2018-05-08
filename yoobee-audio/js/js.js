@@ -57,12 +57,30 @@ $(document).ready(function(){
 	function trackProgress(){
 		// console.log(audio.currentTime);
 		// console.log(audio.duration);
-		
+
 		$("#audioProg")
 			.trigger("configure",{"max":audio.duration})
 			.val(audio.currentTime)
 			.trigger("change");
 
+		var currentArc = ((audio.currentTime / audio.duration)*360)-5
+
+		if(currentArc<0){
+			currentArc=0
+		}
+
+		$("#audioProg-style")
+			.trigger(
+				"configure",
+				{
+					"angleArc":currentArc,
+					"max":(audio.currentTime)
+				}
+			)
+			.val(audio.currentTime)
+			.trigger("change");
+
+		$("#audioProgLabel").text(Math.round(audio.currentTime).toString());
 
 		setTimeout(trackProgress,100);
 	}
@@ -86,7 +104,19 @@ $(document).ready(function(){
 		$("#audioProg").knob({
 			"thickness":.2,
 			"width":"150",
-			"readOnly":true
+			"readOnly":false,
+			"cursor":"2.5",
+			"draw":function(){
+				$(this.i).css("font-size","1.5em")
+			}
+		});
+
+		$("#audioProg-style").knob({
+			"thickness":.2,
+			"width":"150",
+			"readOnly":true,
+			"displayInput":false,
+			"angleArc":0
 		});
 
 		setTimeout(function(){createAudio("jackle_app__fortune_cookie")}, 1000)
