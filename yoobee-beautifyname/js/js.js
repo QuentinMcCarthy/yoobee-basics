@@ -50,7 +50,7 @@ $(document).ready(function(){
 			// If the current font size is less than or equal to the max
 			if(pulseNum<=minPulse){
 				// Switch drection to up
-				pulseDir = true;;
+				pulseDir = true;
 			}
 			else {
 				pulseNum=pulseNum-0.1;
