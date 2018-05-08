@@ -1,0 +1,41 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-color:black;
+}
+
+#name {
+	display:block;
+	text-align:center;
+	line-height:100vh;
+	color:white;
+	/* Transitions are important to remove jerkiness of javascript */
+	transition:all 0.35s linear;
+	font-size:4em;
+}
+
+#fadeText {
+	display:block;
+	text-align:center;
+	color:grey;
+	position:fixed;
+	top:55vh;
+	left:45vw;
+	letter-spacing:5px;
+}
+
+.spinDiv {
+	display:none;
+	min-height:300px;
+	min-width:300px;
+	background-color:transparent;
+	position:fixed;
+	top:36vh;
+	left:42vw;
+	border:5px solid red;
+	/* Transitions are important to remove jerkiness of javascript */
+	transition:transform 0.35s linear;
+}
