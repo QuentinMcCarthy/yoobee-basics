@@ -23,7 +23,7 @@ $(document).ready(function(){
 	var audio;
 
 	function createAudio(id){
-		audio = new Audio("music/"+id+".mpc")
+		audio = new Audio("music/"+id+".mp3")
 		play();
 	}
 
