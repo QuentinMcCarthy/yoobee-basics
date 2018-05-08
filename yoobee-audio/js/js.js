@@ -9,7 +9,7 @@
 // 	"readOnly":false,
 // 	"rotation":clockwise,
 // 	"cursor":false,
-// 	"thickness":0.35,
+// 	"thickness":.35,
 // 	"displayInput":true,
 // 	"displayPrevious":false,
 // 	"release":function(){},
@@ -23,7 +23,8 @@ $(document).ready(function(){
 	var audio;
 
 	function createAudio(id){
-		audio = new Audio("music/"+id+".mp3")
+		audio = new Audio("audio/"+id+".mp3");
+		console.dir(audio);
 		play();
 	}
 
@@ -35,14 +36,23 @@ $(document).ready(function(){
 		audio.pause();
 	}
 
-	$("#audioVol").knob({
-		"angleOffset":-90,
-		"angleArc":180,
-		"displayPrevious":true
-	});
+	function createKnobs(){
+		$("#audioVol").knob({
+			"angleOffset":-90,
+			"angleArc":180,
+			"displayInput":false,
+			"displayPrevious":true,
+			"width":"200"
+		});
 
-	$("#audioProg").knob({
-		"angleOffset":90,
-		"angleArc":180
-	})
+		$("#audioProg").knob({
+			"angleOffset":90,
+			"angleArc":180,
+			"rotation":"anticlockwise",
+			"readOnly":true,
+			"thickness":.2
+		})
+	}
+
+	createKnobs();
 });
