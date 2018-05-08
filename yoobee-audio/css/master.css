@@ -9,3 +9,19 @@
 	top:100px;
 	left:100px;
 }
+
+#controls {
+	position:fixed;
+	top:275px;
+	left:150px;
+	font-size:1.5em;
+}
+
+#controls div {
+	display:inline-block;
+	padding:5px;
+}
+
+.activeControl {
+	background-color:grey;
+}
