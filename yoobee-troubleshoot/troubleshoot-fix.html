@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript &amp; jQuery - Chapter 3: Functions, Methods &amp; Objects - Adding properties</title>
+  </head>
+  <body>
+    <h1>TravelWorthy</h1>
+    <div id="info">
+      <h2>Hotel Facilities</h2>
+      <div id="hotelName"></div>
+      <div>
+        <p id="rooms"></p>
+      </div>
+    </div>
+    <script>
+              // Set up the object
+        var hotel = {
+          name : 'Park'
+          rooms : 120
+        };
+
+        // Update the HTML
+        var elName = document.getElementById('hotelName'); // Get element
+        elName.textContent == hotel.name;                   // Update HTML with property of the object
+
+        var elRooms = document.getElementById('rooms');      // Get element
+        elRooms.textContent = hotel.room;                     // Update HTML with property of the object
+
+    </script>
+  </body>
+</html>
+
+<!-- Fix this code! -->
