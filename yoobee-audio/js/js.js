@@ -35,6 +35,10 @@ $(document).ready(function(){
 	function createAudio(id){
 		// Use audio constructor in audio var
 		audio = new Audio("audio/"+id+".mp3");
+
+		// CAN ADD ON DROPBOX
+		// audio = new Audio("https://dl.dropboxusercontent.com/s/fkfuvepzz97psg2/jackle_app__fortune_cookie.mp3");
+
 		// console.dir(audio);
 		play();
 
@@ -110,7 +114,9 @@ $(document).ready(function(){
 			// Play the next audio if the current audio is X
 			if(currentTrack=="jackle_app__fortune_cookie"){
 				// Play new audio
-				// createAudio("");
+				setTimeout(function(){
+					createAudio("project_yi_(vicetone_remix)")
+				}, 1000);
 			}
 		}
 	}
