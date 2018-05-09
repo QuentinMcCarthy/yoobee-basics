@@ -26,12 +26,16 @@ $(document).ready(function(){
 	var audio;
 
 	// Function to create new audio
-	function createAudio(id){
+	function createAudio(id, first){
 		// Use audio constructor in audio var
 		audio = new Audio("audio/"+id+".mp3");
 		console.dir(audio);
 		play();
-		trackProgress();
+
+		// Only run this function if 'first' is true
+		if(first){
+			trackProgress();
+		}
 	}
 
 	// Play the audio
@@ -92,6 +96,10 @@ $(document).ready(function(){
 		// Set the label element to show the audio's currentTime
 		// $("#audioProgLabel").text(Math.round(audio.currentTime).toString());
 
+		if(audio.currentTime>=audio.duration){
+			console.log("Yes");
+		}
+
 		// Repeat this function once every tenth of a second
 		setTimeout(trackProgress,100);
 	}
@@ -133,7 +141,8 @@ $(document).ready(function(){
 
 		// Play the audio after a second
 		// This allows the knobs to initialise beforehand
-		setTimeout(function(){createAudio("jackle_app__fortune_cookie")}, 1000)
+		// 'true' argument specifies this is the first run
+		setTimeout(function(){createAudio("jackle_app__fortune_cookie", true)}, 1000)
 	}
 
 	// Click event for the play button
