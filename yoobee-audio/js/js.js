@@ -34,20 +34,21 @@ $(document).ready(function(){
 		trackProgress();
 	}
 
-	// Play the music
+	// Play the audio
 	function play(){
 		audio.play();
 		$("#playButton").addClass("activeControl");
 		$("#pauseButton").removeClass("activeControl");
 	}
 
-	// Pause the music
+	// Pause the audio
 	function pause(){
 		audio.pause();
 		$("#playButton").removeClass("activeControl");
 		$("#pauseButton").addClass("activeControl");
 	}
 
+	// Set the volume of the audio
 	function setVol(vol){
 		if(typeof audio != "undefined"){
 			audio.volume = vol;
@@ -58,18 +59,26 @@ $(document).ready(function(){
 		// console.log(audio.currentTime);
 		// console.log(audio.duration);
 
+		// Set the audioProg knob's max and value to duration
+		// and current time of audio
 		$("#audioProg")
 			.trigger("configure",{"max":audio.duration})
 			.val(audio.currentTime)
 			.trigger("change");
 
+		// Create a temporary variable
+		// Initialise variable with a 360deg percentage of
+		// the audio's current time verse its duration
 		var currentArc = ((audio.currentTime / audio.duration)*360)-5
 
+		// If the arc is less than 0, set it to 0
 		if(currentArc<0){
 			currentArc=0
 		}
 
-		$("#audioProg-style")
+		// Set the audioProgStyle knob's arc and max to
+		// the currentTime with a delay
+		$("#audioProgStyle")
 			.trigger(
 				"configure",
 				{
@@ -80,8 +89,10 @@ $(document).ready(function(){
 			.val(audio.currentTime)
 			.trigger("change");
 
-		$("#audioProgLabel").text(Math.round(audio.currentTime).toString());
+		// Set the label element to show the audio's currentTime
+		// $("#audioProgLabel").text(Math.round(audio.currentTime).toString());
 
+		// Repeat this function once every tenth of a second
 		setTimeout(trackProgress,100);
 	}
 
@@ -111,7 +122,8 @@ $(document).ready(function(){
 			}
 		});
 
-		$("#audioProg-style").knob({
+		// Audio progress secondary knob
+		$("#audioProgStyle").knob({
 			"thickness":.2,
 			"width":"150",
 			"readOnly":true,
@@ -119,13 +131,17 @@ $(document).ready(function(){
 			"angleArc":0
 		});
 
+		// Play the audio after a second
+		// This allows the knobs to initialise beforehand
 		setTimeout(function(){createAudio("jackle_app__fortune_cookie")}, 1000)
 	}
 
+	// Click event for the play button
 	$("#playButton").click(function(){
 		play();
 	});
 
+	// Click event for the pause button
 	$("#pauseButton").click(function(){
 		pause();
 	});
