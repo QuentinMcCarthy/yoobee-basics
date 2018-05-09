@@ -25,17 +25,24 @@ $(document).ready(function(){
 	// Create audio variable
 	var audio;
 
+	// Create variable for interval
+	var tickTen;
+
+	// Create variable to keep track of the current audio
+	var currentTrack;
+
 	// Function to create new audio
-	function createAudio(id, first){
+	function createAudio(id){
 		// Use audio constructor in audio var
 		audio = new Audio("audio/"+id+".mp3");
-		console.dir(audio);
+		// console.dir(audio);
 		play();
 
-		// Only run this function if 'first' is true
-		if(first){
-			trackProgress();
-		}
+		// Keep track of the current audio's file name
+		currentTrack = id;
+
+		// Run trackProgress every tenth of a second
+		tickTen = setInterval(trackProgress, 100);
 	}
 
 	// Play the audio
@@ -96,12 +103,16 @@ $(document).ready(function(){
 		// Set the label element to show the audio's currentTime
 		// $("#audioProgLabel").text(Math.round(audio.currentTime).toString());
 
+		// If the audio is finished
 		if(audio.currentTime>=audio.duration){
-			console.log("Yes");
-		}
+			clearInterval(tickTen);
 
-		// Repeat this function once every tenth of a second
-		setTimeout(trackProgress,100);
+			// Play the next audio if the current audio is X
+			if(currentTrack=="jackle_app__fortune_cookie"){
+				// Play new audio
+				// createAudio("");
+			}
+		}
 	}
 
 	// Function to create the knobs on the page
@@ -123,7 +134,7 @@ $(document).ready(function(){
 		$("#audioProg").knob({
 			"thickness":.2,
 			"width":"150",
-			"readOnly":false,
+			"readOnly":true,
 			"cursor":"2.5",
 			"draw":function(){
 				$(this.i).css("font-size","1.5em")
@@ -141,8 +152,7 @@ $(document).ready(function(){
 
 		// Play the audio after a second
 		// This allows the knobs to initialise beforehand
-		// 'true' argument specifies this is the first run
-		setTimeout(function(){createAudio("jackle_app__fortune_cookie", true)}, 1000)
+		setTimeout(function(){createAudio("jackle_app__fortune_cookie")}, 1000)
 	}
 
 	// Click event for the play button
