@@ -48,6 +48,9 @@ $(document).ready(function(){
 			audio = new Audio("audio/"+id+".mp3");
 		}
 
+		// Audio function for if the file is not returned
+		// audio.onerror = function(){}
+
 		// Play the created audio
 		// play();
 
