@@ -93,17 +93,15 @@ $(document).ready(function(){
 
 			currentTrack--;
 
-			console.log("Skip backward");
-
 			checkCurrentTrack();
 
 			if(currentTrack<maxTracks){
 				$("#skipButton").removeClass("disabled");
 			}
-		}
-		else{
-			console.log("Track is 1 or lower");
-			$("#backButton").addClass("disabled");
+
+			if(currentTrack==1){
+				$("#backButton").addClass("disabled");
+			}
 		}
 	}
 
@@ -113,22 +111,19 @@ $(document).ready(function(){
 
 			currentTrack++
 
-			console.log("Skip forward");
-
 			checkCurrentTrack();
 
 			if(currentTrack>1){
 				$("#backButton").removeClass("disabled");
 			}
-		}
-		else{
-			console.log("Track is "+maxTracks+" or higher");
-			$("#skipButton").addClass("disabled");
+
+			if(currentTrack==maxTracks){
+				$("#skipButton").addClass("disabled");
+			}
 		}
 	}
 
 	function checkCurrentTrack(){
-		console.log(currentTrack);
 		// Play the next audio if the current audio is X
 		if(currentTrack==2){
 			// Play new audio
