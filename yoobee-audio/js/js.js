@@ -29,21 +29,36 @@ $(document).ready(function(){
 	var tickTen;
 
 	// Create variable to keep track of the current audio
-	var currentTrack;
+	var currentTrack = 0;
+
+	// Create variable to keep track of how much
+	// Audio is listed
+	var maxTracks = 3;
 
 	// Function to create new audio
-	function createAudio(id){
-		// Use audio constructor in audio var
-		audio = new Audio("audio/"+id+".mp3");
+	function createAudio(hosted,id){
+		// If statement declares if given id is a file name
+		// Or a URL
+		if(hosted){
+			// Use audio constructor in audio var
+			audio = new Audio(id);
+		}
+		else{
+			// Use audio constructor in audio var
+			audio = new Audio("audio/"+id+".mp3");
+		}
 
-		// CAN ADD ON DROPBOX
-		// audio = new Audio("https://dl.dropboxusercontent.com/s/fkfuvepzz97psg2/jackle_app__fortune_cookie.mp3");
+		// Play the created audio
+		// play();
 
-		// console.dir(audio);
-		play();
+		// Pause the created audio
+		pause();
 
-		// Keep track of the current audio's file name
-		currentTrack = id;
+		// Set the volume of the created audio
+		setVol($("#audioVol").v);
+
+		// Keep track of the current audio track
+		// currentTrack++
 
 		// Run trackProgress every tenth of a second
 		tickTen = setInterval(trackProgress, 100);
@@ -66,7 +81,74 @@ $(document).ready(function(){
 	// Set the volume of the audio
 	function setVol(vol){
 		if(typeof audio != "undefined"){
-			audio.volume = vol;
+			if(typeof vol != "undefined"){
+				audio.volume = vol;
+			}
+		}
+	}
+
+	function skipBackward(){
+		if(currentTrack>1){
+			audio.pause();
+
+			currentTrack--;
+
+			console.log("Skip backward");
+
+			checkCurrentTrack();
+
+			if(currentTrack<maxTracks){
+				$("#skipButton").removeClass("disabled");
+			}
+		}
+		else{
+			console.log("Track is 1 or lower");
+			$("#backButton").addClass("disabled");
+		}
+	}
+
+	function skipForward(){
+		if(currentTrack<maxTracks){
+			audio.pause();
+
+			currentTrack++
+
+			console.log("Skip forward");
+
+			checkCurrentTrack();
+
+			if(currentTrack>1){
+				$("#backButton").removeClass("disabled");
+			}
+		}
+		else{
+			console.log("Track is "+maxTracks+" or higher");
+			$("#skipButton").addClass("disabled");
+		}
+	}
+
+	function checkCurrentTrack(){
+		console.log(currentTrack);
+		// Play the next audio if the current audio is X
+		if(currentTrack==2){
+			// Play new audio
+			setTimeout(function(){
+				// Locally hosted
+				// createAudio(false,"project_yi_(vicetone_remix)")
+
+				// Dropbox hosted
+				createAudio(true,"https://dl.dropboxusercontent.com/s/w9xs464amubfrkg/project_yi_%28vicetone_remix%29.mp3")
+			}, 1000);
+		}
+		else if(currentTrack==3){
+			// Play new audio
+			setTimeout(function(){
+				// Locally hosted
+				// createAudio(false,"edge_of_infinity_(minnesota_remix)")
+
+				// Dropbox hosted
+				createAudio(true,"https://dl.dropboxusercontent.com/s/agya40507f4s3g5/edge_of_infinity_%28minnesota_remix%29.mp3")
+			})
 		}
 	}
 
@@ -111,13 +193,10 @@ $(document).ready(function(){
 		if(audio.currentTime>=audio.duration){
 			clearInterval(tickTen);
 
-			// Play the next audio if the current audio is X
-			if(currentTrack=="jackle_app__fortune_cookie"){
-				// Play new audio
-				setTimeout(function(){
-					createAudio("project_yi_(vicetone_remix)")
-				}, 1000);
-			}
+			// New track
+			currentTrack++
+
+			checkCurrentTrack();
 		}
 	}
 
@@ -158,7 +237,16 @@ $(document).ready(function(){
 
 		// Play the audio after a second
 		// This allows the knobs to initialise beforehand
-		setTimeout(function(){createAudio("jackle_app__fortune_cookie")}, 1000)
+		setTimeout(function(){
+			// Locally hosted
+			// createAudio(false,"jackle_app__fortune_cookie")
+
+			// New track
+			currentTrack++
+
+			// Dropbox hosted
+			createAudio(true,"https://dl.dropboxusercontent.com/s/roy5ilvpiaoqav3/jackle_app__fortune_cookie.mp3")
+		}, 1000)
 	}
 
 	// Click event for the play button
@@ -169,6 +257,14 @@ $(document).ready(function(){
 	// Click event for the pause button
 	$("#pauseButton").click(function(){
 		pause();
+	});
+
+	$("#backButton").click(function(){
+		skipBackward();
+	});
+
+	$("#skipButton").click(function(){
+		skipForward();
 	});
 
 	// Call functions
