@@ -127,98 +127,101 @@ $(document).ready(function(){
 		}
 
 		// Play the next audio if the current audio is X
-		if(currentTrack==2){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"project_yi_(vicetone_remix)")
+		// Switch statement compares cases against given
+		// This is basically an if else if else if else
+		switch(currentTrack){
+			case 2:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"project_yi_(vicetone_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/w9xs464amubfrkg/project_yi_%28vicetone_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==3){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"edge_of_infinity_(minnesota_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/w9xs464amubfrkg/project_yi_%28vicetone_remix%29.mp3")
+				}, 250);
+				break;
+			case 3:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"edge_of_infinity_(minnesota_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/agya40507f4s3g5/edge_of_infinity_%28minnesota_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==4){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"flash_funk_(marshmello_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/agya40507f4s3g5/edge_of_infinity_%28minnesota_remix%29.mp3")
+				}, 250);
+				break;
+			case 4:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"flash_funk_(marshmello_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/4h8sxxsu7u2rd0d/flash_funk_%28marshmello_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==5){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"let_the_games_begin_(hyper_potions_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/4h8sxxsu7u2rd0d/flash_funk_%28marshmello_remix%29.mp3")
+				}, 250);
+				break;
+			case 5:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"let_the_games_begin_(hyper_potions_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/iw058ae68kfoa3a/let_the_games_begin_%28hyper_potions_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==6){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"lucidity_(dan_negovan_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/iw058ae68kfoa3a/let_the_games_begin_%28hyper_potions_remix%29.mp3")
+				}, 250);
+				break;
+			case 6:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"lucidity_(dan_negovan_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/6q80d9o0hbrmozf/lucidity_%28dan_negovan_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==7){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"silver_scrapes_(protoshredanoid_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/6q80d9o0hbrmozf/lucidity_%28dan_negovan_remix%29.mp3")
+				}, 250);
+				break;
+			case 7:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"silver_scrapes_(protoshredanoid_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/e4na3iu3qcdvn1k/silver_scrapes_%28protoshredanoid_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==8){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"the_glory_(james_egbert_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/e4na3iu3qcdvn1k/silver_scrapes_%28protoshredanoid_remix%29.mp3")
+				}, 250);
+				break;
+			case 8:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"the_glory_(james_egbert_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/f9c43zdc0g3a9ok/the_glory_%28james_egbert_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==9){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"welcome_to_planet_urf_(jauz_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/f9c43zdc0g3a9ok/the_glory_%28james_egbert_remix%29.mp3")
+				}, 250);
+				break;
+			case 9:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"welcome_to_planet_urf_(jauz_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/mbh524zux40yxyk/welcome_to_planet_urf_%28jauz_remix%29.mp3")
-			}, 250);
-		}
-		else if(currentTrack==10){
-			// Play new audio
-			setTimeout(function(){
-				// Locally hosted
-				// createAudio(false,"worlds_collide_(arty_remix)")
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/mbh524zux40yxyk/welcome_to_planet_urf_%28jauz_remix%29.mp3")
+				}, 250);
+				break;
+			case 10:
+				// Play new audio
+				setTimeout(function(){
+					// Locally hosted
+					// createAudio(false,"worlds_collide_(arty_remix)")
 
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/uw4rwd4iqpgdst4/worlds_collide_%28arty_remix%29.mp3")
-			}, 250);
-		}
-		else{
-			console.log("Either an error has occured or there is no more audio to play");
+					// Dropbox hosted
+					createAudio(true,"https://dl.dropboxusercontent.com/s/uw4rwd4iqpgdst4/worlds_collide_%28arty_remix%29.mp3")
+				}, 250);
+				break;
+			default:
+				console.log("Either an error has occured or there is no more audio to play");
 		}
 	}
 
