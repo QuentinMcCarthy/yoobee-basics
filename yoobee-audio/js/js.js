@@ -270,6 +270,15 @@ $(document).ready(function(){
 
 		// Put the created HTML into the DOM
 		$("#playlistView").html(htmlString);
+
+		// This click event is in here instead of down with the others
+		// Because the elements it targets are created here
+		// And do not exist otherwise
+		// Click event for the remove from playlist button
+		$(".playlistBtn").click(function(){
+			console.log("Click");
+			// removeFromPlaylist(this.attr("data-remove"))
+		});
 	}
 
 	function addToPlaylist(newFile){
@@ -384,12 +393,6 @@ $(document).ready(function(){
 	// Click event for the add to playlist button
 	$("#audioInputBtn").click(function(){
 		addToPlaylist($("#audioInput").val());
-	});
-	
-	// Click event for the remove from playlist button
-	$(".playlistBtn").click(function(){
-		console.log("Click");
-		// removeFromPlaylist(this.attr("data-remove"))
 	});
 
 	// Call functions
