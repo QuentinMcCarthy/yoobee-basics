@@ -254,12 +254,18 @@ $(document).ready(function(){
 		// For every item in the array
 		// Create HTML for the item
 		audioArray.forEach(function(currentValue, index){
-			htmlString += "<div class='playlistItem'><p>"
-			htmlString += "<strong>localFile:</strong>"
-			htmlString += "<br>"+currentValue.localFile+"<br>"
-			htmlString += "<strong>hostedFile:</strong>"
-			htmlString += "<br>"+currentValue.hostedFile+""
-			htmlString += "</p></div><hr>";
+			htmlString += "<div class='playlistItem'><p>";
+			htmlString += "<strong>localFile:</strong>";
+			htmlString += "<br>"+currentValue.localFile+"<br>";
+			htmlString += "<strong>hostedFile:</strong>";
+			htmlString += "<br>"+currentValue.hostedFile+"";
+			htmlString += "</p></div>";
+			htmlString += "<div class='playlistBtnPos'>";
+			htmlString += "<div class='playlistBtn' data-remove='"+index+"'>";
+			htmlString += "<i class='fas fa-trash'></i>";
+			htmlString += "</div>";
+			htmlString += "</div>";
+			htmlString += "<hr>";
 		});
 
 		// Put the created HTML into the DOM
@@ -295,6 +301,10 @@ $(document).ready(function(){
 			// Update the DOM to reflect the updated playlist
 			updatePlaylist();
 		}
+	}
+
+	function removeFromPlaylist(toRemove){
+		console.log(toRemove);
 	}
 
 	// Function to create the knobs on the page
@@ -374,6 +384,12 @@ $(document).ready(function(){
 	// Click event for the add to playlist button
 	$("#audioInputBtn").click(function(){
 		addToPlaylist($("#audioInput").val());
+	});
+	
+	// Click event for the remove from playlist button
+	$(".playlistBtn").click(function(){
+		console.log("Click");
+		// removeFromPlaylist(this.attr("data-remove"))
 	});
 
 	// Call functions
