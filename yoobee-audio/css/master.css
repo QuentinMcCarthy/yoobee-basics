@@ -1,19 +1,19 @@
 #audioVolDiv {
 	position:fixed;
 	top:50px;
-	left:50px;
+	left:325px;
 }
 
 #audioProgDiv, #audioProgStyleDiv {
 	position:fixed;
 	top:100px;
-	left:100px;
+	left:375px;
 }
 
 #controls {
 	position:fixed;
 	top:275px;
-	left:105px;
+	left:375px;
 	font-size:1.5em;
 }
 
@@ -24,11 +24,11 @@
 
 #playlistControl {
 	position:fixed;
-	top:50px;
-	left:350px;
+	top:350px;
+	left:50px;
 	background-color:grey;
-	height:275px;
-	width:310px;
+	height:500px;
+	width:800px;
 	padding:7px 5px 5px 5px;
 }
 
@@ -40,7 +40,7 @@
 #audioInput {
 	display:inline-block;
 	height:20px;
-	width:280px;
+	width:770px;
 	font-size:0.75em;
 }
 
@@ -50,6 +50,18 @@
 	height:20px;
 }
 
+#playlistView {
+	height:465px;
+	width:100%;
+	margin-top:5px;
+	overflow:auto;
+}
+
+.playlistItem p {
+	margin:5px 0;
+}
+
+/* Javascript classes */
 .activeControl {
 	background-color:grey;
 }

@@ -78,11 +78,11 @@ $(document).ready(function(){
 	var tickTen;
 
 	// Create variable to keep track of the current audio
-	var currentTrack = 0;
+	var currentTrack = -1;
 
 	// Create variable to keep track of how much
 	// Audio is listed
-	var maxTracks = 10;
+	var maxTracks = (audioArray.length - 1);
 
 	// Function to create new audio
 	function createAudio(hosted,id){
@@ -98,7 +98,15 @@ $(document).ready(function(){
 		}
 
 		// Audio function for if the file is not returned
-		// audio.onerror = function(){}
+		audio.onerror = function(){
+			if(hosted){
+				audio = new Audio("audio/"+audioArray[currentTrack].localFile+".mp3");
+
+				hosted = 0;
+				console.log("Loading file failed. Attempting to load local file.");
+			}
+		}
+
 
 		// Play the created audio
 		// play();
@@ -143,7 +151,7 @@ $(document).ready(function(){
 			// If the given volume is a number
 			if(typeof vol == "number"){
 				// If the volume is within the valid range
-				if(vol <= 1 & vol >= 0){
+				if(vol <= 1 && vol >= 0){
 					audio.volume = vol;
 					audioVol = vol;
 				}
@@ -152,7 +160,7 @@ $(document).ready(function(){
 	}
 
 	function skipBackward(){
-		if(currentTrack>1){
+		if(currentTrack>0){
 			audio.pause();
 
 			currentTrack--;
@@ -173,7 +181,7 @@ $(document).ready(function(){
 
 	function checkCurrentTrack(){
 		// Set button disabled or not
-		if(currentTrack>1){
+		if(currentTrack>0){
 			$("#backButton").removeClass("disabled");
 		}
 		else{
@@ -187,85 +195,87 @@ $(document).ready(function(){
 			$("#skipButton").addClass("disabled");
 		}
 
+		createAudio(true,audioArray[currentTrack].hostedFile);
+
 		// Play the next audio if the current audio is X
 		// Switch statement compares cases against given
 		// This is basically an if else if else if else
-		switch(currentTrack){
-			case 2:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"project_yi_(vicetone_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/w9xs464amubfrkg/project_yi_%28vicetone_remix%29.mp3")
-				break;
-			case 3:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"edge_of_infinity_(minnesota_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/agya40507f4s3g5/edge_of_infinity_%28minnesota_remix%29.mp3")
-				break;
-			case 4:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"flash_funk_(marshmello_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/4h8sxxsu7u2rd0d/flash_funk_%28marshmello_remix%29.mp3")
-				break;
-			case 5:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"let_the_games_begin_(hyper_potions_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/iw058ae68kfoa3a/let_the_games_begin_%28hyper_potions_remix%29.mp3")
-				break;
-			case 6:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"lucidity_(dan_negovan_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/6q80d9o0hbrmozf/lucidity_%28dan_negovan_remix%29.mp3")
-				break;
-			case 7:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"silver_scrapes_(protoshredanoid_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/e4na3iu3qcdvn1k/silver_scrapes_%28protoshredanoid_remix%29.mp3")
-				break;
-			case 8:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"the_glory_(james_egbert_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/f9c43zdc0g3a9ok/the_glory_%28james_egbert_remix%29.mp3")
-				break;
-			case 9:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"welcome_to_planet_urf_(jauz_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/mbh524zux40yxyk/welcome_to_planet_urf_%28jauz_remix%29.mp3")
-				break;
-			case 10:
-				// Play new audio
-				// Locally hosted
-				// createAudio(false,"worlds_collide_(arty_remix)")
-
-				// Dropbox hosted
-				createAudio(true,"https://dl.dropboxusercontent.com/s/uw4rwd4iqpgdst4/worlds_collide_%28arty_remix%29.mp3")
-				break;
-			default:
-				console.log("Either an error has occured or there is no more audio to play");
-		}
+		// switch(currentTrack){
+		// 	case 2:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"project_yi_(vicetone_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/w9xs464amubfrkg/project_yi_%28vicetone_remix%29.mp3")
+		// 		break;
+		// 	case 3:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"edge_of_infinity_(minnesota_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/agya40507f4s3g5/edge_of_infinity_%28minnesota_remix%29.mp3")
+		// 		break;
+		// 	case 4:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"flash_funk_(marshmello_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/4h8sxxsu7u2rd0d/flash_funk_%28marshmello_remix%29.mp3")
+		// 		break;
+		// 	case 5:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"let_the_games_begin_(hyper_potions_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/iw058ae68kfoa3a/let_the_games_begin_%28hyper_potions_remix%29.mp3")
+		// 		break;
+		// 	case 6:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"lucidity_(dan_negovan_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/6q80d9o0hbrmozf/lucidity_%28dan_negovan_remix%29.mp3")
+		// 		break;
+		// 	case 7:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"silver_scrapes_(protoshredanoid_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/e4na3iu3qcdvn1k/silver_scrapes_%28protoshredanoid_remix%29.mp3")
+		// 		break;
+		// 	case 8:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"the_glory_(james_egbert_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/f9c43zdc0g3a9ok/the_glory_%28james_egbert_remix%29.mp3")
+		// 		break;
+		// 	case 9:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"welcome_to_planet_urf_(jauz_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/mbh524zux40yxyk/welcome_to_planet_urf_%28jauz_remix%29.mp3")
+		// 		break;
+		// 	case 10:
+		// 		// Play new audio
+		// 		// Locally hosted
+		// 		// createAudio(false,"worlds_collide_(arty_remix)")
+		//
+		// 		// Dropbox hosted
+		// 		createAudio(true,"https://dl.dropboxusercontent.com/s/uw4rwd4iqpgdst4/worlds_collide_%28arty_remix%29.mp3")
+		// 		break;
+		// 	default:
+		// 		console.log("Either an error has occured or there is no more audio to play");
+		// }
 	}
 
 	function trackProgress(){
@@ -319,7 +329,7 @@ $(document).ready(function(){
 	}
 
 	// Function to create the knobs on the page
-	function createKnobs(){
+	function init(){
 		// Audio volume knob
 		$("#audioVol").knob({
 			"angleOffset":-90,
@@ -354,6 +364,20 @@ $(document).ready(function(){
 			"fgColor":"black",
 		});
 
+		// Create and declare htmlString as an empty string
+		var htmlString = "";
+
+		// For every item in the array
+		// Create HTML for the item
+		audioArray.forEach(function(currentValue, index){
+			htmlString += "<div class='playlistItem'>"
+			htmlString += "<p><strong>localFile:</strong><br>"+currentValue.localFile+"<br>"
+			htmlString += "<strong>hostedFile:</strong><br>"+currentValue.hostedFile+"</p></div>";
+		});
+
+		// Put the created HTML into the DOM
+		$("#playlistView").html(htmlString);
+
 		// Creates the audio after a delay
 		// This allows the knobs to initialise beforehand
 		setTimeout(function(){
@@ -364,7 +388,9 @@ $(document).ready(function(){
 			// createAudio(false,"jackle_app__fortune_cookie")
 
 			// Dropbox hosted
-			createAudio(true,"https://dl.dropboxusercontent.com/s/roy5ilvpiaoqav3/jackle_app__fortune_cookie.mp3")
+			// createAudio(true,"https://dl.dropboxusercontent.com/s/roy5ilvpiaoqav3/jackle_app__fortune_cookie.mp3")
+
+			checkCurrentTrack();
 		}, 250)
 	}
 
@@ -391,5 +417,5 @@ $(document).ready(function(){
 	});
 
 	// Call functions
-	createKnobs();
+	init();
 });
