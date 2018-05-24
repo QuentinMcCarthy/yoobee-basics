@@ -73,7 +73,7 @@
 	console.log("aAverageGrades is "+aAverageGrades);
 
 	for(var iCount=0; iCount<iSize; iCount++) {
-		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / aGradesPhysics.length;
+		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3;
 		aAverageGrades.push(fAverage);
 		console.log(fAverage+" is ("+aGradesPhysics[iCount]+" + "+aGradesChemistry[iCount]+" + "+aGradesBiology[iCount]+") / "+aGradesPhysics.length+" for "+iCount);
 	}
