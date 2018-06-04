@@ -9,12 +9,27 @@
 	</head>
 	<body>
 		<div id="showData"></div>
+		<button id="sortButton" type="button" name="button">Sort</button>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script>
 			var items = [];
+			var items2 = [];
 
-			var showData = $('#showData');
+			var showData = $("#showData");
+
+			$("#sortButton").click(function(){
+				items.sort();
+				items2.sort(function(a,b){
+					return b-a;
+				});
+
+				$(showData).html("");
+
+				populateHTML();
+				console.log(items);
+				console.log(items2);
+			});
 
 			// The json ajax method provided by jQuery
 			// Note the 'data' returned via the getJSON method is already a json object
@@ -25,29 +40,41 @@
 
 					for(var i = 0; i < data.length; i++){
 						items.push(data[i].address.street);
+						items2.push(data[i].id);
 
 						// console.log(data[i].name);
 					}
 				}).done(function(data){
-					populateHTML(data);
+					populateHTML();
 				});
 
 			// Some code to populate the DOM after the ajax request has process
-	  		function populateHTML(data){
-	  			console.log(data);
-
+	  		function populateHTML(){
 	  			// if items has length
-	  			if (items.length) {
-					items.sort()
+	  			if(items.length){
+					// items.sort()
 
-	  				var content = '<li>' + items.join('</li><li>') + '</li>';
-	  				var list = $('<ul />').html(content);
+	  				var content = "<li>" + items.join("</li><li>") + "</li>";
+	  				var list = $("<ul />").html(content);
 
 	  				showData.append(list);
 	  			}
+				if(items2.length){
+					// items2.sort(function(a,b){
+					// 	return b-a;
+					// });
+
+					content = "<li>" + items2.join("</li><li>") + "</li>";
+					list = $("<ul / >").html(content);
+
+					showData.append(list);
+				}
 	  		}
 
 			console.log(items);
+			console.log(items2);
+
+			// Everything below this is to be ignored for now
 
 			// ***Note that this current template illustrates 2 ways of accessing the getJSON
 			// data object via the external populate html function.
