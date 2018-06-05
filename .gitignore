@@ -4,4 +4,4 @@ prepros-6.config
 jquery*.js
 node_modules/
 jQuery_plugins/
-audio
+package-lock.json
