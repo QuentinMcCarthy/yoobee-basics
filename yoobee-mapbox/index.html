@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+
+		<style>
+			body {
+				margin:0;
+				padding:0;
+			}
+			#map {
+				position:absolute;
+				top:0;
+				bottom:0;
+				width:100%;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
+		<div id="map"></div>
+
+		<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+		<script>
+		  mapboxgl.accessToken = 'pk.eyJ1IjoibWNjYXJ0aHlxIiwiYSI6ImNqaTNucHpsMzAwaGczcXF2eDJhbGxwNGwifQ.Qn-qvcjlEmkiLq4lqV435A';
+		  var map = new mapboxgl.Map({
+		    container: 'map',
+		    style: 'mapbox://styles/mapbox/streets-v10',
+			// center: [-74.50, 40], // Starting position [ lng, lat]
+			center: [174.780339,-41.27900],
+			zoom: 18 // Starting zoom
+		  });
+		</script>
+	</body>
+</html>
