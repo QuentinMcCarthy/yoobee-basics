@@ -1,7 +1,8 @@
+#Blacklist
+node_modules/
+jQuery_plugins/
 .DS_Store
 config.codekit3
 prepros-6.config
 jquery*.js
-node_modules/
-jQuery_plugins/
 package-lock.json
