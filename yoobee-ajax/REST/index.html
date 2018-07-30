@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>REST</title>
+
+		<link rel="stylesheet" href="css/master.css">
+	</head>
+	<body>
+		<h1>First REST Request from Mockaroo</h1>
+
+		<form id="filterForm" method="post">
+			<label for="minAge">Min Age</label>
+			<input type="number" name="minAge" value="1" min="1" max="100">
+
+			<label for="maxAge">Max Age</label>
+			<input type="number" name="maxAge" value="100" min="1" max="100">
+
+			<label for="minIncome">Min Income</label>
+			<input type="number" name="minIncome" value="0" min="0">
+
+			<label for="maxIncome">Max Income</label>
+			<input type="number" name="maxIncome" value="2000" min="0">
+
+			<input type="submit" value="Submit">
+		</form>
+
+		<div id="chartContainer"></div>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Google Charts -->
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>

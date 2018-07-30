@@ -94,7 +94,7 @@ function drawChart(){
 
 	$.ajax({
 		type: "GET",
-		url: "data/MOCK_DATA.json",
+		url: "data/colorbygender.json",
 		dataType: "json",
 		success: function(data){
 			console.log("Data loaded");
@@ -111,8 +111,6 @@ function drawChart(){
 				colorData.push(data[i].fave_color);
 			}
 
-			console.log(colorData);
-
 			colors.push(colorData[0])
 
 			colorData.forEach(function(currentValue,index){
@@ -128,8 +126,6 @@ function drawChart(){
 					colors.push(currentValue);
 				}
 			});
-
-			console.log(colors);
 
 			for(var i = 0; i < colors.length; i++){
 				dataTable.addColumn("number", colors[i])
@@ -152,6 +148,17 @@ function drawChart(){
 				}
 			});
 
+			var maleRow = ["Male"];
+			var femaleRow = ["Female"];
+
+			for(var i = 0; i < maleCounts.length; i++){
+				maleRow.push(maleCounts[i]);
+				femaleRow.push(femaleCounts[i]);
+			}
+
+			dataTable.addRow(maleRow);
+			dataTable.addRow(femaleRow);
+
 			const options = {
 				animation: {
 					duration: 1000,
@@ -160,17 +167,39 @@ function drawChart(){
 				},
 				axisTitlesPosition: "out",
 				backgroundColor: "white",
+				colors: [
+					"orange",
+					"purple",
+					"#b784a7",
+					"maroon",
+					"violet",
+					"goldenrod",
+					"blue",
+					"teal",
+					"red",
+					"#f0f",
+					"green",
+					"crimson",
+					"indigo",
+					"pink",
+					"#c89",
+					"aquamarine",
+					"#40e0d0",
+					"khaki",
+					"yellow"
+				],
 				title: "Favourite Color by Gender",
 				hAxis: {
-					title: "Number"
+					title: "Colours",
+					ticks: [16,18,20,22,24,26,28,30,32,34,36,38,40]
 				},
 				vAxis:{
-					title: "Year"
+					title: "Gender"
 				}
 			};
 
 			const chart = new google.visualization.BarChart(document.getElementById("chartContainer"));
-			chart.draw(data, options);
+			chart.draw(dataTable, options);
 		},
 		error: function(err){
 
