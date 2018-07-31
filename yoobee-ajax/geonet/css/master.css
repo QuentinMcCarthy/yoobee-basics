@@ -1,0 +1,60 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body { background-color: #3c3d4a; }
+
+a:link { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+#appContainer {
+	height: 750px;
+	width: 90vw;
+	background-color: white;
+	margin: 10px auto;
+	border: 5px solid #8d0020;
+}
+
+#leftHalf {
+	height: 100%;
+	width: 70%;
+	float: left;
+	padding: 5px;
+}
+
+#rightHalf {
+	height: 100%;
+	width: 30%;
+	float: left;
+	padding: 5px;
+}
+
+#chartContainer {
+	height: 70%;
+	width: 100%;
+	padding: 5px;
+}
+
+#chartData {
+	height: 30%;
+	width: 100%;
+	background-color: silver;
+	padding: 5px;
+}
+
+#newsData {
+	height: 100%;
+	width: 100%;
+	background-color: silver;
+	padding: 5px;
+}
+
+.newsData {
+	height: 10%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
