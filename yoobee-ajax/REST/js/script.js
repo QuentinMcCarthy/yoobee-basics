@@ -25,7 +25,6 @@ function ajaxLoad() {
 			url: "https://my.api.mockaroo.com/restdata.json?min_age="+minAge+"&max_age="+maxAge+"&min_income="+minIncome+"&max_income="+maxIncome+"&key="+key,
 			dataType: "json",
 			success: function(data){
-				console.clear();
 				console.log(data);
 
 				drawChart(data);
