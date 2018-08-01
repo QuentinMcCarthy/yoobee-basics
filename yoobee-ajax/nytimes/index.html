@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>NYTimes Request</title>
+
+		<link rel="stylesheet" href="css/master.css">
+	</head>
+	<body>
+		<h1>Article Search request</h1>
+
+		<form id="searchQueries">
+			<label for="searchQuery">Search</label>
+			<input type="text" name="searchQuery" value="">
+
+			<label for="fromDate">From Date</label>
+			<input type="date" name="fromDate" value="">
+
+			<label for="toDate">To Date</label>
+			<input type="date" name="toDate" value="">
+
+			<label for="pageNum">Page</label>
+			<input type="number" name="pageNum" value="1" min="1">
+
+			<input type="submit" value="Submit">
+		</form>
+
+		<br>
+		<span id="copyright"></span>
+		<br>
+
+		<div id="articleData"></div>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Google Charts -->
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
