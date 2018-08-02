@@ -6,3 +6,4 @@ config.codekit3
 prepros-6.config
 jquery*.js
 package-lock.json
+config.json
