@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 10px;
+}
+
+h1, form {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1, form {
+	margin-bottom: 15px;
+}
+
+#responseData {
+	width: 90vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.response {
+	display: flex;
+	border: 1px solid black;
+	padding: 5px;
+	align-content: flex-start;
+}
+
+.response > div {
+	display: inline-block;
+	height: 100%;
+}
+
+.response-left {
+	width: 30%;
+}
+
+.response-right {
+	width: 70%;
+}

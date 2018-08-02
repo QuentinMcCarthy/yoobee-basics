@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Youtube Data API</title>
+
+		<link rel="stylesheet" href="css/master.css">
+	</head>
+	<body>
+		<h1>Youtube Data API</h1>
+
+		<form id="query">
+			<label for="searchQuery">Search</label>
+			<input type="text" name="searchQuery" value="">
+
+			<label for="searchType">Type</label>
+			<input type="text" name="searchType" value="" placeholder="channel/video/playlist">
+
+			<label for="maxResults">Max Results</label>
+			<input type="number" name="maxResults" value="10">
+
+			<input type="submit" value="Submit">
+		</form>
+
+		<div id="responseData"></div>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
