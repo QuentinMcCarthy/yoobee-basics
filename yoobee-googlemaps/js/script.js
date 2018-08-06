@@ -6,7 +6,7 @@ function initMap(){
 			lat: -41.279214,
 			lng: 174.780340
 		},
-		zoom: 15,
+		zoom: 13,
 		disableDefaultUI: true,
 		fullscreenControl: true,
 		fullscreenControlOptions: {

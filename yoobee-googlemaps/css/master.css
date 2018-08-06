@@ -9,15 +9,45 @@ html, body {
 	min-height: 100vh;
 }
 
-#map {
+h1 {
+	margin-top: 15px;
+	text-align: center;
+}
+
+#webContainer {
 	position: absolute;
-	top: 0;
+	left: 0;
+	top: 30px;
 	right: 0;
 	bottom: 0;
-	left: 0;
 	width: 90%;
 	height: 90%;
 	margin: auto;
 	border: 10px solid #2c3e50;
+}
+
+#map {
+	/* position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0; */
+	float: left;
+	width: 70%;
+	height: 100%;
+	/* margin: auto;
+	border: 10px solid #2c3e50; */
 	text-align: center;
+}
+
+#placeList {
+	float: left;
+	width: 30%;
+	height: 100%;
+	border-left: 5px solid #2c3e50;
+}
+
+.placeList-item {
+	padding: 5px;
+	border-bottom: 2px solid #2c3e50;
 }
