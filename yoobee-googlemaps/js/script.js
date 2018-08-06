@@ -1,8 +1,25 @@
-google.maps.event.addDomListener(window, "load", initMap);
+google.maps.event.addDomListener(window, "load", loadStyles);
 
-var map;
+var map, infoBox;
 
-function initMap(){
+function loadStyles(){
+	$.ajax({
+		type: "GET",
+		url: "data/styles.json",
+		dataType: "json",
+		success: function(data){
+			console.log(data);
+
+			initMap(data);
+		},
+		error: function(err){
+			console.log("Error "+err.status);
+			console.log(err);
+		}
+	});
+}
+
+function initMap(styles){
 	var mapOptions = {
 		center: {
 			lat: -41.279214,
@@ -26,76 +43,12 @@ function initMap(){
 		mapTypeControlOptions: {
 			position: google.maps.ControlPosition.RIGHT_TOP
 		},
-		styles: [
-			{
-				featureType: "landscape",
-				stylers: [
-					{
-						color: "#d4d9e9"
-					}
-				]
-			},
-			{
-				featureType: "poi.park",
-				stylers: [
-					{
-						color: "#6ba358"
-					}
-				]
-			},
-			{
-				featureType: "road",
-				stylers: [
-					{
-						color: "#c2ccdd"
-					}
-				]
-			},
-			{
-				featureType: "transit.line",
-				stylers: [
-					{
-						color: "#ebb854"
-					}
-				]
-			},
-			{
-				featureType: "transit.line",
-				elementType: "labels.text.fill",
-				stylers: [
-					{
-						color: "#000000"
-					}
-				]
-			},
-			{
-				featureType: "water",
-				stylers: [
-					{
-						color: "#3b5998"
-					}
-				]
-			}
-		]
+		styles: styles
 	}
 
 	map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 	addAllMarkers();
-}
-
-function dropMarker(place,num,interval){
-	setTimeout(function(){
-		$("#placeList").append("<div class='placeList-item'><h3>"+place.placeName+"</h3></div><hr>");
-
-		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(place.lat, place.lng),
-			title: place.placeName,
-			map: map,
-			animation: google.maps.Animation.DROP,
-			label: num.toString()
-		});
-	}, interval);
 }
 
 function addAllMarkers(){
@@ -115,4 +68,55 @@ function addAllMarkers(){
 			console.log(err);
 		}
 	});
+}
+
+function dropMarker(place,num,interval){
+	setTimeout(function(){
+		$("#placeList").append(
+			$("<div class='placeList-item'>").click(function(){
+				moveToMarker(marker);
+			}).append(
+				$("<h3>").text(place.placeName)
+			).append(
+				$("<p>").text(place.placeDesc)
+			).append(
+				$("<span>").text(place.address)
+			)
+		).append("<hr>");
+
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(place.lat, place.lng),
+			title: place.placeName,
+			description: place.placeDesc,
+			address: place.address,
+			lng: place.lng,
+			lat: place.lat,
+			map: map,
+			animation: google.maps.Animation.DROP,
+			label: num.toString()
+		});
+
+		markerClickEvent(marker);
+
+	}, interval);
+}
+
+function markerClickEvent(marker){
+	infoBox = new google.maps.InfoWindow();
+
+	google.maps.event.addListener(marker, "click", function(){
+		moveToMarker(marker);
+	});
+}
+
+function moveToMarker(marker){
+	if(infoBox){
+		infoBox.close();
+	}
+
+	map.panTo(new google.maps.LatLng(marker.lat, marker.lng));
+	map.setZoom(17)
+
+	infoBox.setContent("<div><h4>"+marker.title+"</h4><p>"+marker.address+"</p></div>");
+	infoBox.open(map, marker);
 }

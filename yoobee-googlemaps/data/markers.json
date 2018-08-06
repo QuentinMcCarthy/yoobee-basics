@@ -1,51 +1,71 @@
 [
 	{
 		"placeName": "Domino's Pizza Wellington City",
+		"placeDesc": "Delivery/carryout chain offering a wide range of pizza, plus chicken & other sides.",
+		"address": "35-37 Cambridge Terrace, Te Aro, Wellington 6011",
 		"lat": -41.295563,
 		"lng": 174.782698
 	},
 	{
-		"placeName": "Hell Pizza Cuba Street",
-		"lat": -41.297759,
-		"lng": 174.7710373
+		"placeName": "Hell Pizza",
+		"placeDesc": "",
+		"address": "14 Bond St, Te Aro, Wellington 6011",
+		"lat": -41.289191,
+		"lng": 174.775550
 	},
 	{
 		"placeName": "Wholly Bagels & Pizza",
+		"placeDesc": "",
+		"address": "39 Murphy St, Thorndon, Wellington 6001",
 		"lat": -41.274233,
 		"lng": 174.778766
 	},
 	{
 		"placeName": "Pizzeria Napoli",
+		"placeDesc": "Italian restaurant serving wood-fired pizzas, calzones & pasta in a casual, cozy atmosphere.",
+		"address": "30 Courtenay Pl, Te Aro, Wellington 6023",
 		"lat": -41.2936547,
 		"lng": 174.7802337
 	},
 	{
 		"placeName": "Heaven Woodfire Pizza",
+		"placeDesc": "",
+		"address": "247 Cuba St, Te Aro, Wellington 6011",
 		"lat": -41.2959299,
 		"lng": 174.772154
 	},
 	{
 		"placeName": "Tommy Millions",
+		"placeDesc": "",
+		"address": "142 Featherston St, Wellington, 6011",
 		"lat": -41.2924969,
 		"lng": 174.776630
 	},
 	{
 		"placeName": "Pizza Express Wellington",
+		"placeDesc": "",
+		"address": "12-148 willis Street, Wellington CBD, Wellington 6011",
 		"lat": -41.290119,
 		"lng": 174.774016
 	},
 	{
 		"placeName": "Sal's Authentic NY Pizza Cuba St",
+		"placeDesc": "",
+		"address": "109 Cuba St, Te Aro, Wellington 6011",
 		"lat": -41.292574,
 		"lng": 174.776297
 	},
 	{
 		"placeName": "Alaturka",
+		"placeDesc": "",
+		"address": "38 Waring Taylor St, Wellington, 6011",
 		"lat": -41.281983,
 		"lng": 174.776666
 	},
 	{
 		"placeName": "Pizza Pomodoro",
+		"placeDesc": "",
+		"address": "13 Leeds St, Te Aro, Wellington 6011",
 		"lat": -41.292493,
 		"lng": 174.776818
 	}

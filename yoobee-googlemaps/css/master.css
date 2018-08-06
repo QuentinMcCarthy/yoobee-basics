@@ -49,4 +49,16 @@ h1 {
 
 .placeList-item {
 	padding: 5px;
+	background-color: initial;
+	color: initial;
+	cursor: pointer;
+}
+
+.placeList-item:hover {
+	background-color: #2c3e50;
+	color: white;
+}
+
+.placeList-item p {
+	margin-bottom: 10px;
 }
