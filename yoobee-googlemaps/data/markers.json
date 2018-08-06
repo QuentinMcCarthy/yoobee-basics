@@ -1,6 +1,21 @@
 [
 	{
-		"place_name": "Pizzeria Napoli",
+		"placeName": "Domino's Pizza Wellington City",
+		"lat": -41.295563,
+		"lng": 174.782698
+	},
+	{
+		"placeName": "Hell Pizza Cuba Street",
+		"lat": -41.297759,
+		"lng": 174.7710373
+	},
+	{
+		"placeName": "Wholly Bagels & Pizza",
+		"lat": -41.274233,
+		"lng": 174.778766
+	},
+	{
+		"placeName": "Pizzeria Napoli",
 		"lat": -41.2936547,
 		"lng": 174.7802337
 	},
@@ -10,13 +25,28 @@
 		"lng": 174.772154
 	},
 	{
-		"placeName": "Hell Pizza Cuba Street",
-		"lat": -41.297759,
-		"lng": 174.7710373
-	},
-	{
 		"placeName": "Tommy Millions",
 		"lat": -41.2924969,
 		"lng": 174.776630
 	},
+	{
+		"placeName": "Pizza Express Wellington",
+		"lat": -41.290119,
+		"lng": 174.774016
+	},
+	{
+		"placeName": "Sal's Authentic NY Pizza Cuba St",
+		"lat": -41.292574,
+		"lng": 174.776297
+	},
+	{
+		"placeName": "Alaturka",
+		"lat": -41.281983,
+		"lng": 174.776666
+	},
+	{
+		"placeName": "Pizza Pomodoro",
+		"lat": -41.292493,
+		"lng": 174.776818
+	}
 ]
