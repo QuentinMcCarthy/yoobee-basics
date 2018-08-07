@@ -79,7 +79,7 @@ function loadPlaces(){
 function dropMarker(place,interval){
 	setTimeout(function(){
 		$("#placeList").append(
-			$("<div class='placeList-item' data-id='"+place.id+"'>").click(function(){
+			$("<div class='placeList-item' data-uid='"+place.uid+"'>").click(function(){
 				moveToMarker(marker);
 			}).append(
 				$("<h3>").text(place.placeName)
@@ -98,7 +98,7 @@ function dropMarker(place,interval){
 			position: new google.maps.LatLng(place.lat, place.lng),
 			map: map,
 			animation: google.maps.Animation.DROP,
-			label: place.id,
+			label: place.uid,
 			title: place.placeName,
 			description: place.placeDesc,
 			address: place.address,
