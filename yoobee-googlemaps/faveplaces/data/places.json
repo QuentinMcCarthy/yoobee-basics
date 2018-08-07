@@ -1,0 +1,210 @@
+[
+	{
+		"id": 0,
+		"placeName": "Strike Entertainment Centre",
+		"placeDesc": "",
+		"address": "399 Hutt Rd, Alicetown, Wellington 5012",
+		"phone": "04-568 3168",
+		"website": {
+			"url": "http://www.strikenz.co.nz/",
+			"domain": "strikenz.co.nz"
+		},
+		"hours": [
+			"12PM - 9:30PM",
+			"10AM - 10:30PM",
+			"9AM - 10:30PM",
+			"9AM - 10:30PM",
+			"9AM - 11:30PM",
+			"9AM - 11:30PM",
+			"9AM - 10PM"
+		],
+		"lat": -41.217342,
+		"lng": 174.881059
+	},
+	{
+		"id": 1,
+		"placeName": "McDonald's",
+		"placeDesc": "Classic, long-running fast-food chain known for its burgers, fries & shakes.",
+		"address": "WAINUIOMATA SHOPPING CENTRE The Strand, Wainuiomata, Lower Hutt 5014",
+		"phone": "04-564 3829",
+		"website": {
+			"url": "https://mcdonalds.co.nz/find-us/restaurants",
+			"domain": "mcdonalds.co.nz"
+		},
+		"hours": [
+			"6AM - 11PM",
+			"6AM - 11PM",
+			"6AM - 12AM",
+			"6AM - 12AM",
+			"6AM - 12AM",
+			"6AM - 12AM",
+			"6AM - 11PM"
+		],
+		"lat": -41.259872,
+		"lng": 174.944294
+	},
+	{
+		"id": 2,
+		"placeName": "Wainuiomata Volunteer Fire Brigade",
+		"placeDesc": "",
+		"address": "34 Fitzherbert Rd, Wainuiomata, Lower Hutt 5014",
+		"phone": "04-564 8340",
+		"website": {
+			"url": "http://www.wainuifire.org.nz/",
+			"domain": "wainuifire.org.nz"
+		},
+		"hours": [
+			""
+		],
+		"lat": -41.257048,
+		"lng": 174.947942
+	},
+	{
+		"id": 3,
+		"placeName": "Domino's Pizza Wainuiomata",
+		"placeDesc": "Delivery/carryout chain offering a wide range of pizza, plus chicken & other sides.",
+		"address": "12 Queen St, Wainuiomata, 5014",
+		"phone": "04-564 9948",
+		"website": {
+			"url": "https://www.dominos.co.nz/store/nz-wainuiomata-98909?utm_source=google&utm_medium=places-organic",
+			"domain": "dominos.co.nz"
+		},
+		"hours": [
+			"11SM - 11PM",
+			"11SM - 11PM",
+			"11SM - 11PM",
+			"11SM - 11PM",
+			"11SM - 12AM",
+			"11SM - 12AM",
+			"11SM - 11PM"
+		],
+		"lat": -41.261232,
+		"lng": 174.945301
+	},
+	{
+		"id": 4,
+		"placeName": "Museum of New Zealand Te Papa Tongarewa",
+		"placeDesc": "New Zealand's principal museum tracking native and colonial culture as well as natural history.",
+		"address": "55 Cable St, Te Aro, Wellington 6011",
+		"phone": "04-381 7000",
+		"website": {
+			"url": "https://www.tepapa.govt.nz/",
+			"domain": "tepapa.govt.nz"
+		},
+		"hours": [
+			"10AM - 6PM",
+			"10AM - 6PM",
+			"10AM - 6PM",
+			"10AM - 6PM",
+			"10AM - 6PM",
+			"10AM - 6PM",
+			"10AM - 6PM"
+		],
+		"lat": -41.290456,
+		"lng": 174.782091
+	},
+	{
+		"id": 5,
+		"placeName": "Yoobee School of Design - Design School Wellington",
+		"placeDesc": "",
+		"address": "Level 2, West Wing, Wellington Railway Station, 2 Bunny St, Pipitea, Wellington 6011",
+		"phone": "04-384 9624",
+		"website": {
+			"url": "https://www.yoobee.ac.nz/",
+			"domain": "yoobee.ac.nz"
+		},
+		"hours": [
+			""
+		],
+		"lat": -41.279224,
+		"lng": 174.7803
+	},
+	{
+		"id": 6,
+		"placeName": "Countdown Wainuiomata",
+		"placeDesc": "",
+		"address": "Wainuiomata Shopping Mall, Wainuiomata, 5014",
+		"phone": "04-564 8129",
+		"website": {
+			"url": "https://www.countdown.co.nz/",
+			"domain": "countdown.co.nz"
+		},
+		"hours": [
+			"6AM - 10PM",
+			"6AM - 10PM",
+			"6AM - 10PM",
+			"6AM - 10PM",
+			"6AM - 10PM",
+			"6AM - 10PM",
+			"6AM - 10PM"
+		],
+		"lat": -41.260346,
+		"lng": 174.943692
+	},
+	{
+		"id": 8,
+		"placeName": "Queensgate Shopping Centre",
+		"placeDesc": "",
+		"address": "Queens Dr & Bunny Street, Lower Hutt, Wellington 5011",
+		"phone": "04-922 3509",
+		"website": {
+			"url": "https://www.queensgateshopping.co.nz/",
+			"domain": "queensgateshopping.co.nz"
+		},
+		"hours": [
+			"9AM - 6PM",
+			"9AM - 6PM",
+			"9AM - 6PM",
+			"9AM - 9PM",
+			"9AM - 9PM",
+			"9AM - 6PM",
+			"10AM - 5:30PM"
+		],
+		"lat": -41.210001,
+		"lng": 174.906699
+	},
+	{
+		"id": 7,
+		"placeName": "Huia Pool+Fitness",
+		"placeDesc": "",
+		"address": "Lower Hutt, Wellington 6009",
+		"phone": "04-570 6655",
+		"website": {
+			"url": "http://www.huttcity.govt.nz/huia-pool",
+			"domain": "huttcity.govt.nz"
+		},
+		"hours": [
+			"6AM - 8PM",
+			"6AM - 7PM",
+			"6AM - 8PM",
+			"6AM - 7PM",
+			"6AM - 7PM",
+			"8AM - 6PM",
+			"8AM - 6PM"
+		],
+		"lat": -41.214244,
+		"lng": 174.904812
+	},
+	{
+		"id": 9,
+		"placeName": "The Dowse Art Museum And Dowse Square",
+		"placeDesc": "Contemporary art is showcased at this free museum, which also offers a children's activity space.",
+		"address": "45 Laings Rd, Lower Hutt 5010",
+		"phone": "04-570 6500",
+		"website": {
+			"url": "http://www.dowse.org.nz/",
+			"domain": "dowse.org.nz"
+		},
+		"hours": [
+			"10AM - 5PM",
+			"10AM - 5PM",
+			"10AM - 5PM",
+			"10AM - 5PM",
+			"10AM - 5PM",
+			"10AM - 5PM",
+			"10AM - 5PM"
+		],
+		"lat": -41.211749,
+		"lng": 174.904495
+	}
+]
