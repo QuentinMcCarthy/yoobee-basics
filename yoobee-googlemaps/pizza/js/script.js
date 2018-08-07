@@ -1,6 +1,8 @@
 google.maps.event.addDomListener(window, "load", loadStyles);
 
-var map, infoBox;
+var map, infoBox, markersLoaded;
+
+const weekDay = new Date().getDay();
 
 function loadStyles(){
 	$.ajax({
@@ -20,7 +22,7 @@ function loadStyles(){
 }
 
 function initMap(styles){
-	var mapOptions = {
+	map = new google.maps.Map(document.getElementById("map"), {
 		center: {
 			lat: -41.279214,
 			lng: 174.780340
@@ -44,24 +46,28 @@ function initMap(styles){
 			position: google.maps.ControlPosition.RIGHT_TOP
 		},
 		styles: styles
-	}
+	});
 
-	map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-	addAllMarkers();
+	loadPlaces();
 }
 
-function addAllMarkers(){
+function loadPlaces(){
 	$.ajax({
 		type: "GET",
-		url: "data/markers.json",
+		url: "data/places.json",
 		dataType: "json",
 		success: function(data){
 			console.log(data);
 
+			const delay = 250;
+
 			for(var i = 0; i < data.length; i++){
-				dropMarker(data[i], i * 250);
+				dropMarker(data[i], (i * delay));
 			}
+
+			setTimeout(function(){
+				markersLoaded = true;
+			}, ((data.length + 1) * delay))
 		},
 		error: function(err){
 			console.log("Error "+err.status);
@@ -72,8 +78,6 @@ function addAllMarkers(){
 
 function dropMarker(place,interval){
 	setTimeout(function(){
-		var currWeek = new Date().getDay();
-
 		$("#placeList").append(
 			$("<div class='placeList-item' data-id='"+place.id+"'>").click(function(){
 				moveToMarker(marker);
@@ -83,7 +87,7 @@ function dropMarker(place,interval){
 				$("<div>").append(
 					$("<p>").text(place.placeDesc)
 				).append(
-					$("<p>").text("Today's Open Hours: "+place.hours[currWeek])
+					$("<p>").text("Today's Open Hours: "+place.hours[weekDay])
 				).append(
 					$("<span>").text(place.address)
 				)
@@ -92,43 +96,49 @@ function dropMarker(place,interval){
 
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(place.lat, place.lng),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			label: place.id,
 			title: place.placeName,
 			description: place.placeDesc,
 			address: place.address,
 			url: place.website.url,
 			domain: place.website.domain,
 			lng: place.lng,
-			lat: place.lat,
-			map: map,
-			animation: google.maps.Animation.DROP,
-			label: place.id.toString()
+			lat: place.lat
 		});
 
-		markerClickEvent(marker);
+		infoBox = new google.maps.InfoWindow();
+
+		google.maps.event.addListener(marker, "click", function(){
+			moveToMarker(marker);
+		});
 
 	}, interval);
 }
 
-function markerClickEvent(marker){
-	infoBox = new google.maps.InfoWindow();
-
-	google.maps.event.addListener(marker, "click", function(){
-		moveToMarker(marker);
-	});
-}
-
 function moveToMarker(marker){
-	if(infoBox){
-		infoBox.close();
+	if(markersLoaded){
+		if(infoBox){
+			infoBox.close();
 
-		$(".placeList-item div").css("display","");
+			$(".placeList-item div").css("display","");
+		}
+
+		$(".placeList-item[data-id='"+marker.label+"'] div").css("display","block");
+
+		map.panTo(new google.maps.LatLng(marker.lat, marker.lng))
+		map.setZoom(17);
+
+		var content = "<div><h4>"+marker.title+"</h4>";
+
+		if(marker.address){
+			content += "<a href='"+marker.url+"'>"+marker.domain+"</a>";
+		}
+
+		content += "<p>"+marker.address+"</p></div>";
+
+		infoBox.setContent(content);
+		infoBox.open(map, marker);
 	}
-
-	$(".placeList-item[data-id='"+marker.label+"'] div").css("display","block");
-
-	map.panTo(new google.maps.LatLng(marker.lat, marker.lng));
-	map.setZoom(17)
-
-	infoBox.setContent("<div><h4>"+marker.title+"</h4><a href='"+marker.url+"'>"+marker.domain+"</a><p>"+marker.address+"</p></div>");
-	infoBox.open(map, marker);
 }
