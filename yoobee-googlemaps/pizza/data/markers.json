@@ -1,5 +1,7 @@
 [
 	{
+
+		"id": 0,
 		"placeName": "Domino's Pizza Wellington City",
 		"placeDesc": "Delivery/carryout chain offering a wide range of pizza, plus chicken & other sides.",
 		"address": "35-37 Cambridge Terrace, Te Aro, Wellington 6011",
@@ -12,15 +14,16 @@
 			"11AM - 11PM",
 			"11AM - 11PM",
 			"11AM - 11PM",
+			"11AM - 11PM",
 			"11AM - 12AM",
 			"11AM - 1AM",
-			"11AM - 1AM",
-			"11AM - 11PM"
+			"11AM - 1AM"
 		],
 		"lat": -41.295563,
 		"lng": 174.782698
 	},
 	{
+		"id": 1,
 		"placeName": "Hell Pizza",
 		"placeDesc": "",
 		"address": "14 Bond St, Te Aro, Wellington 6011",
@@ -34,14 +37,15 @@
 			"11AM - 10PM",
 			"11AM - 10PM",
 			"11AM - 10PM",
+			"11AM - 10PM",
 			"11AM - 11PM",
-			"11AM - 11PM",
-			"11AM - 10PM"
+			"11AM - 11PM"
 		],
 		"lat": -41.289191,
 		"lng": 174.775550
 	},
 	{
+		"id": 2,
 		"placeName": "Wholly Bagels & Pizza",
 		"placeDesc": "",
 		"address": "39 Murphy St, Thorndon, Wellington 6001",
@@ -51,18 +55,19 @@
 			"domain": "whollypizza.co.nz"
 		},
 		"hours": [
+			"9AM - 4PM",
 			"7:30AM - 5PM",
 			"7:30AM - 5PM",
 			"7:30AM - 5PM",
 			"7:30AM - 8PM",
 			"7:30AM - 8PM",
-			"9AM - 8PM",
-			"9AM - 4PM"
+			"9AM - 8PM"
 		],
 		"lat": -41.274233,
 		"lng": 174.778766
 	},
 	{
+		"id": 3,
 		"placeName": "Pizzeria Napoli",
 		"placeDesc": "Italian restaurant serving wood-fired pizzas, calzones & pasta in a casual, cozy atmosphere.",
 		"address": "30 Courtenay Pl, Te Aro, Wellington 6023",
@@ -73,17 +78,18 @@
 		},
 		"hours": [
 			"5PM - 12AM",
-			"12 - 3PM & 5PM - 12AM",
-			"12 - 3PM & 5PM - 12AM",
-			"12 - 3PM & 5PM - 12AM",
-			"12 - 3PM & 5PM - 12AM",
-			"12 - 3PM & 5PM - 12AM",
-			"5PM - 12AM"
+			"5PM - 12AM",
+			"12PM - 3PM & 5PM - 12AM",
+			"12PM - 3PM & 5PM - 12AM",
+			"12PM - 3PM & 5PM - 12AM",
+			"12PM - 3PM & 5PM - 12AM",
+			"12PM - 3PM & 5PM - 12AM"
 		],
 		"lat": -41.2936547,
 		"lng": 174.7802337
 	},
 	{
+		"id": 4,
 		"placeName": "Heaven Woodfire Pizza",
 		"placeDesc": "",
 		"address": "247 Cuba St, Te Aro, Wellington 6011",
@@ -93,18 +99,19 @@
 			"domain": "heavenspizza.co.nz"
 		},
 		"hours": [
+			"11AM - 11PM",
 			"11AM - 10PM",
 			"11AM - 10PM",
 			"11AM - 11PM",
 			"11AM - 11PM",
 			"11AM - 11PM",
-			"11AM - 11PM",
-			"11AM - 11PM",
+			"11AM - 11PM"
 		],
 		"lat": -41.2959299,
 		"lng": 174.772154
 	},
 	{
+		"id": 5,
 		"placeName": "Tommy Millions",
 		"placeDesc": "",
 		"address": "142 Featherston St, Wellington, 6011",
@@ -114,18 +121,19 @@
 			"domain": "tommymillions.co.nz"
 		},
 		"hours": [
-			"7AM - 7:30PM",
-			"7AM - 7:30PM",
-			"7AM - 7:30PM",
-			"7AM - 7:30PM",
-			"7AM - 7:30PM",
 			"7AM - 6:30PM",
+			"7AM - 7:30PM",
+			"7AM - 7:30PM",
+			"7AM - 7:30PM",
+			"7AM - 7:30PM",
+			"7AM - 7:30PM",
 			"7AM - 6:30PM"
 		],
 		"lat": -41.2924969,
 		"lng": 174.776630
 	},
 	{
+		"id": 6,
 		"placeName": "Pizza Express Wellington",
 		"placeDesc": "",
 		"address": "12-148 willis Street, Wellington CBD, Wellington 6011",
@@ -139,14 +147,15 @@
 			"11AM - 10PM",
 			"11AM - 10PM",
 			"11AM - 10PM",
+			"11AM - 10PM",
 			"11AM - 12AM",
-			"11:30AM - 12AM",
-			"11AM - 10PM"
+			"11:30AM - 12AM"
 		],
 		"lat": -41.290119,
 		"lng": 174.774016
 	},
 	{
+		"id": 7,
 		"placeName": "Sal's Authentic NY Pizza Cuba St",
 		"placeDesc": "",
 		"address": "109 Cuba St, Te Aro, Wellington 6011",
@@ -158,41 +167,53 @@
 		"hours": [
 			"11:30AM - 10PM",
 			"11:30AM - 10PM",
-			"11:30AM - 11PM",
-			"11:30AM - 11PM",
-			"11:30AM - 12AM",
-			"11:30AM - 12AM",
 			"11:30AM - 10PM",
+			"11:30AM - 11PM",
+			"11:30AM - 11PM",
+			"11:30AM - 12AM",
+			"11:30AM - 12AM"
 		],
 		"lat": -41.292574,
 		"lng": 174.776297
 	},
 	{
+		"id": 8,
 		"placeName": "Alaturka",
 		"placeDesc": "",
 		"address": "38 Waring Taylor St, Wellington, 6011",
-		"phone": "",
+		"phone": "04-472 1003",
 		"website": {
-			"url": "",
-			"domain": ""
 		},
 		"hours": [
-
+			"Closed",
+			"10AM - 9PM",
+			"10AM - 9PM",
+			"10AM - 9PM",
+			"10AM - 9PM",
+			"10AM - 9PM",
+			"9AM - 6PM"
 		],
 		"lat": -41.281983,
 		"lng": 174.776666
 	},
 	{
+		"id": 9,
 		"placeName": "Pizza Pomodoro",
 		"placeDesc": "",
 		"address": "13 Leeds St, Te Aro, Wellington 6011",
-		"phone": "",
+		"phone": "04-381 2929",
 		"website": {
-			"url": "",
-			"domain": ""
+			"url": "https://www.pizzapomodoro.co.nz/",
+			"domain": "pizzapomodoro.co.nz"
 		},
 		"hours": [
-
+			"5PM - 9PM",
+			"5PM - 9PM",
+			"5PM - 9PM",
+			"11AM - 2PM & 5PM - 9:30PM",
+			"11AM - 2PM & 5PM - 9:30PM",
+			"11AM - 2PM & 5PM - 9:30PM",
+			"11AM - 2PM & 5PM - 9:30PM"
 		],
 		"lat": -41.292493,
 		"lng": 174.776818
