@@ -1,6 +1,6 @@
 [
 	{
-		"uid": "1a",
+		"id": 1,
 		"placeName": "Domino's Pizza Wellington City",
 		"placeDesc": "Delivery/carryout chain offering a wide range of pizza, plus chicken & other sides.",
 		"address": "35-37 Cambridge Terrace, Te Aro, Wellington 6011",
@@ -22,7 +22,7 @@
 		"lng": 174.782698
 	},
 	{
-		"uid": "1b",
+		"id": 2,
 		"placeName": "Hell Pizza",
 		"placeDesc": "",
 		"address": "14 Bond St, Te Aro, Wellington 6011",
@@ -44,7 +44,7 @@
 		"lng": 174.775550
 	},
 	{
-		"uid": "1c",
+		"id": 3,
 		"placeName": "Wholly Bagels & Pizza",
 		"placeDesc": "",
 		"address": "39 Murphy St, Thorndon, Wellington 6001",
@@ -66,7 +66,7 @@
 		"lng": 174.778766
 	},
 	{
-		"uid": "1d",
+		"id": 4,
 		"placeName": "Pizzeria Napoli",
 		"placeDesc": "Italian restaurant serving wood-fired pizzas, calzones & pasta in a casual, cozy atmosphere.",
 		"address": "30 Courtenay Pl, Te Aro, Wellington 6023",
@@ -88,7 +88,7 @@
 		"lng": 174.7802337
 	},
 	{
-		"uid": "1e",
+		"id": 5,
 		"placeName": "Heaven Woodfire Pizza",
 		"placeDesc": "",
 		"address": "247 Cuba St, Te Aro, Wellington 6011",
@@ -110,7 +110,7 @@
 		"lng": 174.772154
 	},
 	{
-		"uid": "1f",
+		"id": 6,
 		"placeName": "Tommy Millions",
 		"placeDesc": "",
 		"address": "142 Featherston St, Wellington, 6011",
@@ -132,7 +132,7 @@
 		"lng": 174.776630
 	},
 	{
-		"uid": "1g",
+		"id": 7,
 		"placeName": "Pizza Express Wellington",
 		"placeDesc": "",
 		"address": "12-148 willis Street, Wellington CBD, Wellington 6011",
@@ -154,7 +154,7 @@
 		"lng": 174.774016
 	},
 	{
-		"uid": "1h",
+		"id": 8,
 		"placeName": "Sal's Authentic NY Pizza Cuba St",
 		"placeDesc": "",
 		"address": "109 Cuba St, Te Aro, Wellington 6011",
@@ -176,7 +176,7 @@
 		"lng": 174.776297
 	},
 	{
-		"uid": "1i",
+		"id": 9,
 		"placeName": "Alaturka",
 		"placeDesc": "",
 		"address": "38 Waring Taylor St, Wellington, 6011",
@@ -198,7 +198,7 @@
 		"lng": 174.776666
 	},
 	{
-		"uid": "1j",
+		"id": 10,
 		"placeName": "Pizza Pomodoro",
 		"placeDesc": "",
 		"address": "13 Leeds St, Te Aro, Wellington 6011",
