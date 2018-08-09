@@ -2,7 +2,7 @@
 google.maps.event.addDomListener(window, "load", loadStyles);
 
 // Global variables
-var map, infoBox, markersLoaded, directionsDisplay, placesService,
+var map, infoBox, markersLoaded, directionsDisplay, markerLocation, placesService,
 	travelMode = google.maps.DirectionsTravelMode.DRIVING;
 
 // Constant globals; never change
@@ -111,6 +111,8 @@ function travelModeControl(controlDiv, map){
 			// Set the travelMode var to the relevant travelMode when clicked
 			travelMode = google.maps.DirectionsTravelMode.DRIVING;
 
+			getRoute(currentLocation, markerLocation);
+
 			// Display the active travel mode
 			$("#travelModeControlDiv > div > div").css("font-weight","");
 			$(controlDrivingText).css("font-weight","bold");
@@ -135,6 +137,8 @@ function travelModeControl(controlDiv, map){
 			// Set the travelMode var to the relevant travelMode when clicked
 			travelMode = google.maps.DirectionsTravelMode.WALKING;
 
+			getRoute(currentLocation, markerLocation);
+
 			// Display the active travel mode
 			$("#travelModeControlDiv > div > div").css("font-weight","");
 			$(controlWalkingText).css("font-weight","bold");
@@ -156,6 +160,8 @@ function travelModeControl(controlDiv, map){
 		.click(function(){
 			// Set the travel mode var to the releveant travel mode
 			travelMode = google.maps.DirectionsTravelMode.BICYCLING;
+
+			getRoute(currentLocation, markerLocation);
 
 			// Display the active travel mode
 			$("#travelModeControlDiv > div > div").css("font-weight","");
@@ -285,10 +291,10 @@ function moveToMarker(marker){
 		infoBox.open(map, marker);
 
 		// Get the marker's coordinates
-		var markerLocation = new google.maps.LatLng(marker.lat, marker.lng);
+		markerLocation = new google.maps.LatLng(marker.lat, marker.lng);
 
 		// Find the place info for the location
-		findPlaceInfo(marker.title);
+		// findPlaceInfo(marker.title);
 
 		// Get the route to the location from the current location
 		getRoute(currentLocation, markerLocation);
