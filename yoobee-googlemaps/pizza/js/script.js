@@ -1,8 +1,12 @@
 google.maps.event.addDomListener(window, "load", loadStyles);
 
-var map, infoBox, markersLoaded;
+var map, infoBox, markersLoaded, directionsDisplay,
+	directionsService = new google.maps.DirectionsService(),
+	travelMode = google.maps.DirectionsTravelMode.DRIVING;
 
 const weekDay = new Date().getDay();
+
+const currentLocation = new google.maps.LatLng(-41.279214, 174.780340);
 
 function loadStyles(){
 	$.ajax({
@@ -22,6 +26,8 @@ function loadStyles(){
 }
 
 function initMap(styles){
+	directionsDisplay = new google.maps.DirectionsRenderer();
+
 	map = new google.maps.Map(document.getElementById("map"), {
 		center: {
 			lat: -41.279214,
@@ -45,10 +51,107 @@ function initMap(styles){
 		mapTypeControlOptions: {
 			position: google.maps.ControlPosition.RIGHT_TOP
 		},
+		mapTypeId: "roadmap",
 		styles: styles
 	});
 
+	directionsDisplay.setMap(map);
+
+	var controlDiv = document.createElement("div");
+		control = new travelModeControl(controlDiv, map);
+
+	controlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.LEFT_TOP].push(controlDiv);
+
 	loadPlaces();
+}
+
+function travelModeControl(controlDiv, map){
+	const controlDivStyles = {
+		"float": "left",
+		"position": "relative"
+	}
+
+	const textDivStyles = {
+		"direction": "ltr",
+		"overflow": "hidden",
+		"text-align": "center",
+		"position": "relative",
+		"font-family": "Robot, Arial, sans-serif",
+		"user-select": "none",
+		"font-size": "11px",
+		"background-color": "#fff",
+		"padding": "8px",
+		"background-clip": "padding-box",
+		"box-shadow": "rgba(0,0,0,0.3) 0px 1px 4px -1px",
+		"cursor": "pointer"
+	}
+
+	$(controlDiv).attr("id","travelModeControlDiv").css("margin","10px");
+
+	var controlDriving = $("<div>")
+		.css(controlDivStyles)
+		.click(function(){
+			travelMode = google.maps.DirectionsTravelMode.DRIVING;
+
+			$("#travelModeControlDiv > div > div").css("font-weight","");
+			$(controlDrivingText).css("font-weight","bold");
+		})
+		.appendTo(controlDiv);
+
+	var controlDrivingText = $("<div>")
+		.css(textDivStyles)
+		.css({
+			"color": "#000",
+			"border-bottom-left-radius": "2px",
+			"border-top-left-radius": "2px",
+			"min-width": "22px",
+			"font-weight": "bold"
+		})
+		.text("Driving")
+		.appendTo(controlDriving);
+
+	var controlWalking = $("<div>")
+		.css(controlDivStyles)
+		.click(function(){
+			travelMode = google.maps.DirectionsTravelMode.WALKING;
+
+			$("#travelModeControlDiv > div > div").css("font-weight","");
+			$(controlWalkingText).css("font-weight","bold");
+		})
+		.appendTo(controlDiv);
+
+	var controlWalkingText = $("<div>")
+		.css(textDivStyles)
+		.css({
+			"color": "rgb(86,86,86)",
+			"min-width": "40px",
+			"border-left": "0px"
+		})
+		.text("Walking")
+		.appendTo(controlWalking);
+
+	var controlBicycling = $("<div>")
+		.css(controlDivStyles)
+		.click(function(){
+			travelMode = google.maps.DirectionsTravelMode.BICYCLING;
+
+			$("#travelModeControlDiv > div > div").css("font-weight","");
+			$(controlBicyclingText).css("font-weight","bold");
+		})
+		.appendTo(controlDiv);
+
+	var controlBicyclingText = $("<div>")
+		.css(textDivStyles)
+		.css({
+			"color": "rgb(86,86,86)",
+			"border-bottom-right-radius": "2px",
+			"border-top-right-radius": "2px",
+			"min-width": "40px",
+			"border-left": "0px"
+		})
+		.text("Bicycling")
+		.appendTo(controlBicycling);
 }
 
 function loadPlaces(){
@@ -127,8 +230,8 @@ function moveToMarker(marker){
 
 		$(".placeList-item[data-id='"+marker.label+"'] div").css("display","block");
 
-		map.panTo(new google.maps.LatLng(marker.lat, marker.lng))
-		map.setZoom(17);
+		// map.panTo(new google.maps.LatLng(marker.lat, marker.lng))
+		// map.setZoom(17);
 
 		var content = "<div><h4>"+marker.title+"</h4>";
 
@@ -140,5 +243,27 @@ function moveToMarker(marker){
 
 		infoBox.setContent(content);
 		infoBox.open(map, marker);
+
+		var markerLocation = new google.maps.LatLng(marker.lat, marker.lng);
+
+		getRoute(currentLocation, markerLocation);
 	}
+}
+
+function getRoute(start, end){
+	const request = {
+		origin: start,
+		destination: end,
+		optimizeWaypoints: true,
+		travelMode: travelMode
+	};
+
+	directionsService.route(request, function(response,status){
+		if(status === google.maps.DirectionsStatus.OK){
+			directionsDisplay.setDirections(response);
+		}else{
+			console.log("Something went wrong");
+			console.log(status);
+		}
+	});
 }
